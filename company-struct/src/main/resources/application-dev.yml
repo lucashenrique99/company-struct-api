@@ -1,0 +1,21 @@
+server:
+  error:
+    whitelabel:
+      enabled: false
+  shutdown: graceful
+spring:
+  datasource:
+    password: admin
+    url: jdbc:postgresql://localhost:5432/company-struct
+    username: postgres
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+#     ddl-auto: create-drop
+    open-in-view: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
