@@ -19,3 +19,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+
+cloudinary:
+  api-key: 929451486817147
+  api-secret: DojVB2S3rtDkBSyFKEpEUTtgsYQ
+  cloud-name: djwgp2pja

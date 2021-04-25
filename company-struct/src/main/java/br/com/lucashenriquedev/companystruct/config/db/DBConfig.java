@@ -1,6 +1,9 @@
 package br.com.lucashenriquedev.companystruct.config.db;
 
 import br.com.lucashenriquedev.companystruct.config.audit.AuditorAwareImpl;
+import br.com.lucashenriquedev.companystruct.domains.communication.repository.PostCommentRepository;
+import br.com.lucashenriquedev.companystruct.domains.communication.repository.PostFeedRepository;
+import br.com.lucashenriquedev.companystruct.domains.communication.repository.PostReactionRepository;
 import br.com.lucashenriquedev.companystruct.domains.communities.repository.CommunityRepository;
 import br.com.lucashenriquedev.companystruct.domains.employees.repository.EmployeeRepository;
 import br.com.lucashenriquedev.companystruct.domains.release_trains.repository.ReleaseTrainRepository;
@@ -31,7 +34,10 @@ import java.util.Optional;
         ReleaseTrainRepository.class,
         ReleaseTrainResponsibleRepository.class,
         ReleaseTrainSquadRepository.class,
-        CommunityRepository.class
+        CommunityRepository.class,
+        PostReactionRepository.class,
+        PostCommentRepository.class,
+        PostFeedRepository.class
 })
 
 public class DBConfig {
