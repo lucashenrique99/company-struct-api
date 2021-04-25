@@ -12,4 +12,5 @@ public class ReleaseTrainMessages {
     public static final String UNABLE_TO_SAVE_RELEASE_TRAIN = "Não foi possível salvar";
     public static final String UNABLE_TO_SAVE_RELEASE_TRAIN_RESPONSIBLE = "Não foi possível salvar o responsável";
     public static final String UNABLE_TO_SAVE_RELEASE_TRAIN_SQUAD = "Não foi possível salvar a squad";
+    public static final String COMMUNITY_REQUIRED = "É necessário informar a comunidade a qual esta RT faz parte";
 }

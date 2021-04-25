@@ -13,7 +13,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties("security")
 public class SecurityProperties {
 
-    private String appName = "Discord Trader Bot API";
+    private String appName = "Company Structure API";
     private Boolean isDev;
     private final TokenProperties tokenProperties = new TokenProperties();
     private final Credentials adminUi = new Credentials();

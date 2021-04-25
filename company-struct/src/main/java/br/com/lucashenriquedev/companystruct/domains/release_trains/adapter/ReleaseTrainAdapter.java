@@ -1,6 +1,8 @@
 package br.com.lucashenriquedev.companystruct.domains.release_trains.adapter;
 
 import br.com.lucashenriquedev.companystruct.commons.utils.CollectionUtils;
+import br.com.lucashenriquedev.companystruct.domains.communities.adapter.CommunityAdapter;
+import br.com.lucashenriquedev.companystruct.domains.communities.factory.CommunityFactory;
 import br.com.lucashenriquedev.companystruct.domains.release_trains.controller.request.InsertReleaseTrainRequest;
 import br.com.lucashenriquedev.companystruct.domains.release_trains.controller.request.UpdateReleaseTrainRequest;
 import br.com.lucashenriquedev.companystruct.domains.release_trains.controller.response.*;
@@ -20,6 +22,7 @@ public class ReleaseTrainAdapter {
         return ReleaseTrain.builder()
                 .name(request.getName())
                 .notes(request.getNotes())
+                .community(CommunityFactory.create(request.getCommunity()))
                 .isActive(Boolean.TRUE)
                 .squads(CollectionUtils.newList())
                 .responsible(CollectionUtils.newList(
@@ -30,6 +33,7 @@ public class ReleaseTrainAdapter {
     public static ReleaseTrain from(UpdateReleaseTrainRequest request) {
         return ReleaseTrain.builder()
                 .name(request.getName())
+                .community(CommunityFactory.create(request.getCommunity()))
                 .notes(request.getNotes())
                 .build();
     }
@@ -51,6 +55,7 @@ public class ReleaseTrainAdapter {
                 .id(releaseTrain.getId())
                 .name(releaseTrain.getName())
                 .isActive(releaseTrain.isActive())
+                .community(CommunityAdapter.toResponse(releaseTrain.getCommunity()))
                 .leader(releaseTrain.getLeader()
                         .map(ReleaseTrainResponsibleAdapter::toResponse)
                         .orElse(null))

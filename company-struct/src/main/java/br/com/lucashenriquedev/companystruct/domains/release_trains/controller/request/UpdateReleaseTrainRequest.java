@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -16,6 +17,9 @@ public class UpdateReleaseTrainRequest {
 
     @NotEmpty(message = ReleaseTrainMessages.NAME_REQUIRED)
     private String name;
+
+    @NotNull(message = ReleaseTrainMessages.COMMUNITY_REQUIRED)
+    private Long community;
 
     private String notes;
 

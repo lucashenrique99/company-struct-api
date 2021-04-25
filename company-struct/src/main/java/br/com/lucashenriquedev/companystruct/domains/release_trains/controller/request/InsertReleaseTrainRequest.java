@@ -21,6 +21,9 @@ public class InsertReleaseTrainRequest {
     @NotNull(message = ReleaseTrainMessages.RELEASE_TRAIN_RESPONSIBLE_REQUIRED)
     private Long responsible;
 
+    @NotNull(message = ReleaseTrainMessages.COMMUNITY_REQUIRED)
+    private Long community;
+
     private String notes;
 
 }

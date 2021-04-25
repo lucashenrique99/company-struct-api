@@ -1,11 +1,10 @@
 package br.com.lucashenriquedev.companystruct.domains.release_trains.model;
 
 import br.com.lucashenriquedev.companystruct.commons.model.AbstractModel;
+import br.com.lucashenriquedev.companystruct.domains.communities.model.Community;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -22,6 +21,15 @@ public class ReleaseTrain extends AbstractModel {
 
     @NotEmpty
     private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            foreignKey = @ForeignKey(name = "fk_release_trains_community"),
+            name = "community",
+            nullable = false,
+            referencedColumnName = "id"
+    )
+    private Community community;
 
     @OneToMany(mappedBy = "releaseTrain")
     private List<ReleaseTrainSquad> squads;
