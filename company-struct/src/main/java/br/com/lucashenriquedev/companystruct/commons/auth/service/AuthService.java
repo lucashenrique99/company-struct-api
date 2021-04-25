@@ -1,7 +1,7 @@
 package br.com.lucashenriquedev.companystruct.commons.auth.service;
 
-import br.com.lucashenriquedev.companystruct.modules.users.model.User;
-import br.com.lucashenriquedev.companystruct.modules.users.service.UserService;
+import br.com.lucashenriquedev.companystruct.domains.users.model.User;
+import br.com.lucashenriquedev.companystruct.domains.users.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

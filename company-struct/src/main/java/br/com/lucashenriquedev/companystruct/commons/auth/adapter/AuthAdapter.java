@@ -1,7 +1,7 @@
 package br.com.lucashenriquedev.companystruct.commons.auth.adapter;
 
 import br.com.lucashenriquedev.companystruct.commons.auth.controller.response.UserResponse;
-import br.com.lucashenriquedev.companystruct.modules.users.model.User;
+import br.com.lucashenriquedev.companystruct.domains.users.model.User;
 
 public class AuthAdapter {
 

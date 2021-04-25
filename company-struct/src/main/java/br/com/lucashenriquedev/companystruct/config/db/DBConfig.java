@@ -1,11 +1,14 @@
 package br.com.lucashenriquedev.companystruct.config.db;
 
 import br.com.lucashenriquedev.companystruct.config.audit.AuditorAwareImpl;
-import br.com.lucashenriquedev.companystruct.modules.employees.repository.EmployeeRepository;
-import br.com.lucashenriquedev.companystruct.modules.squads.repository.SquadMemberRepository;
-import br.com.lucashenriquedev.companystruct.modules.squads.repository.SquadRepository;
-import br.com.lucashenriquedev.companystruct.modules.users.repository.AbstractUserRepository;
-import br.com.lucashenriquedev.companystruct.modules.users.repository.PermissionRepository;
+import br.com.lucashenriquedev.companystruct.domains.employees.repository.EmployeeRepository;
+import br.com.lucashenriquedev.companystruct.domains.release_trains.repository.ReleaseTrainRepository;
+import br.com.lucashenriquedev.companystruct.domains.release_trains.repository.ReleaseTrainResponsibleRepository;
+import br.com.lucashenriquedev.companystruct.domains.release_trains.repository.ReleaseTrainSquadRepository;
+import br.com.lucashenriquedev.companystruct.domains.squads.repository.SquadMemberRepository;
+import br.com.lucashenriquedev.companystruct.domains.squads.repository.SquadRepository;
+import br.com.lucashenriquedev.companystruct.domains.users.repository.AbstractUserRepository;
+import br.com.lucashenriquedev.companystruct.domains.users.repository.PermissionRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.auditing.DateTimeProvider;
@@ -23,7 +26,10 @@ import java.util.Optional;
         PermissionRepository.class,
         EmployeeRepository.class,
         SquadRepository.class,
-        SquadMemberRepository.class
+        SquadMemberRepository.class,
+        ReleaseTrainRepository.class,
+        ReleaseTrainResponsibleRepository.class,
+        ReleaseTrainSquadRepository.class,
 })
 
 public class DBConfig {

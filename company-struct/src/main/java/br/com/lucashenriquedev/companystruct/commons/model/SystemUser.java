@@ -1,6 +1,6 @@
 package br.com.lucashenriquedev.companystruct.commons.model;
 
-import br.com.lucashenriquedev.companystruct.modules.users.model.User;
+import br.com.lucashenriquedev.companystruct.domains.users.model.User;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 

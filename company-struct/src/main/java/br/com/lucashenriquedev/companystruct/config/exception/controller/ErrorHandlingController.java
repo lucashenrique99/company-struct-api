@@ -6,7 +6,7 @@ import br.com.lucashenriquedev.companystruct.config.exception.response.Authentic
 import br.com.lucashenriquedev.companystruct.config.exception.response.ErrorResponseWrapper;
 import br.com.lucashenriquedev.companystruct.config.exception.response.PublicErrorResponse;
 import br.com.lucashenriquedev.companystruct.config.exception.response.WebRequestInfoDTO;
-import br.com.lucashenriquedev.companystruct.modules.users.service.AuthUtilsService;
+import br.com.lucashenriquedev.companystruct.domains.users.service.AuthUtilsService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -43,7 +43,7 @@ public class ErrorHandlingController extends ResponseEntityExceptionHandler {
     private ObjectMapper mapper;
 
     @ExceptionHandler({IllegalArgumentException.class, ExternalErrorException.class})
-    public ResponseEntity<Object> handleIllegalArgumentException(IllegalArgumentException ex) throws IOException {
+    public ResponseEntity<Object> handleIllegalArgumentException(Exception ex) throws IOException {
         ErrorResponseWrapper response = new ErrorResponseWrapper(ex.getMessage());
         handleErrorLog(response, ex);
 
