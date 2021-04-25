@@ -2,6 +2,7 @@ package br.com.lucashenriquedev.companystruct.domains.employees.adapter;
 
 import br.com.lucashenriquedev.companystruct.domains.employees.controller.request.InsertEmployeeRequest;
 import br.com.lucashenriquedev.companystruct.domains.employees.controller.request.UpdateEmployeeRequest;
+import br.com.lucashenriquedev.companystruct.domains.employees.controller.response.BirthdayMonthEmployeeResponse;
 import br.com.lucashenriquedev.companystruct.domains.employees.controller.response.EmployeeProjection;
 import br.com.lucashenriquedev.companystruct.domains.employees.controller.response.EmployeeResponse;
 import br.com.lucashenriquedev.companystruct.domains.employees.model.Employee;
@@ -72,6 +73,17 @@ public class EmployeeAdapter {
                 .birthDate(employee.getBirthDate())
                 .techStack(employee.getTechStack())
                 .phone(employee.getPhone())
+                .build();
+    }
+
+    public static BirthdayMonthEmployeeResponse toBirthdayMonthEmployeeResponse(Employee employee) {
+        return BirthdayMonthEmployeeResponse.builder()
+                .id(employee.getId())
+                .name(employee.getName())
+                .email(employee.getEmail())
+                .phone(employee.getPhone())
+                .birthDate(employee.getBirthDate())
+                .corporatePhone(employee.getCorporatePhone())
                 .build();
     }
 

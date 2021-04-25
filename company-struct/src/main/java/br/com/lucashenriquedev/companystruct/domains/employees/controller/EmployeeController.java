@@ -5,6 +5,7 @@ import br.com.lucashenriquedev.companystruct.config.exception.exception.Resource
 import br.com.lucashenriquedev.companystruct.domains.employees.adapter.EmployeeAdapter;
 import br.com.lucashenriquedev.companystruct.domains.employees.controller.request.InsertEmployeeRequest;
 import br.com.lucashenriquedev.companystruct.domains.employees.controller.request.UpdateEmployeeRequest;
+import br.com.lucashenriquedev.companystruct.domains.employees.controller.response.BirthdayMonthEmployeeResponse;
 import br.com.lucashenriquedev.companystruct.domains.employees.controller.response.EmployeeProjection;
 import br.com.lucashenriquedev.companystruct.domains.employees.controller.response.EmployeeResponse;
 import br.com.lucashenriquedev.companystruct.domains.employees.messages.EmployeeMessages;
@@ -45,6 +46,14 @@ public class EmployeeController {
         return this.employees.findAllActives()
                 .stream()
                 .map(EmployeeAdapter::to)
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping("/birthdays-month")
+        public List<BirthdayMonthEmployeeResponse> findAllActivesByBirthDate() {
+        return this.employees.findAllActivesByBirthDate()
+                .stream()
+                .map(EmployeeAdapter::toBirthdayMonthEmployeeResponse)
                 .collect(Collectors.toList());
     }
 

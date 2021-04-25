@@ -5,9 +5,11 @@ import br.com.lucashenriquedev.companystruct.domains.employees.model.Employee;
 import br.com.lucashenriquedev.companystruct.domains.employees.repository.EmployeeRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,6 +36,12 @@ public class EmployeeService {
 
     public List<Employee> findAllActives() {
         return this.repository.findAll(Sort.by(Sort.Direction.ASC, "name"));
+    }
+
+    public List<Employee> findAllActivesByBirthDate() {
+        return this.repository.findAllActivesByBirthDateInMonth(
+                LocalDate.now().getMonthValue(),
+                PageRequest.of(0, 1000, Sort.by(Sort.Direction.ASC, "name")));
     }
 
     public Optional<Employee> findById(Long id) {
