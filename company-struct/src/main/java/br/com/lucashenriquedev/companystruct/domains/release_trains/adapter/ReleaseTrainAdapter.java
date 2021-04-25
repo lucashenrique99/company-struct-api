@@ -23,6 +23,7 @@ public class ReleaseTrainAdapter {
                 .name(request.getName())
                 .notes(request.getNotes())
                 .community(CommunityFactory.create(request.getCommunity()))
+                .manager(request.getManager())
                 .isActive(Boolean.TRUE)
                 .squads(CollectionUtils.newList())
                 .responsible(CollectionUtils.newList(
@@ -33,6 +34,7 @@ public class ReleaseTrainAdapter {
     public static ReleaseTrain from(UpdateReleaseTrainRequest request) {
         return ReleaseTrain.builder()
                 .name(request.getName())
+                .manager(request.getManager())
                 .community(CommunityFactory.create(request.getCommunity()))
                 .notes(request.getNotes())
                 .build();
@@ -43,6 +45,7 @@ public class ReleaseTrainAdapter {
                 .id(releaseTrain.getId())
                 .name(releaseTrain.getName())
                 .isActive(releaseTrain.isActive())
+                .manager(releaseTrain.getManager())
                 .leader(releaseTrain.getLeader()
                         .map(ReleaseTrainResponsibleAdapter::toResponse)
                         .orElse(null))
@@ -55,6 +58,7 @@ public class ReleaseTrainAdapter {
                 .id(releaseTrain.getId())
                 .name(releaseTrain.getName())
                 .isActive(releaseTrain.isActive())
+                .manager(releaseTrain.getManager())
                 .community(CommunityAdapter.toResponse(releaseTrain.getCommunity()))
                 .leader(releaseTrain.getLeader()
                         .map(ReleaseTrainResponsibleAdapter::toResponse)

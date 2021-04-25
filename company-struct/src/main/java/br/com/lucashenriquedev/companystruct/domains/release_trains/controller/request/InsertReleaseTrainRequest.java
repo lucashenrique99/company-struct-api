@@ -24,6 +24,8 @@ public class InsertReleaseTrainRequest {
     @NotNull(message = ReleaseTrainMessages.COMMUNITY_REQUIRED)
     private Long community;
 
+    private String manager;
+
     private String notes;
 
 }

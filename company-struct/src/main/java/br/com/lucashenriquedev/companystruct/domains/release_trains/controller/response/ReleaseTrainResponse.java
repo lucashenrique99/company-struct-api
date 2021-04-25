@@ -15,6 +15,7 @@ public class ReleaseTrainResponse {
     private Long id;
     private String name;
     private Boolean isActive;
+    private String manager;
     private CommunityResponse community;
     private ReleaseTrainResponsibleResponse leader;
     private List<ReleaseTrainResponsibleResponse> responsible;

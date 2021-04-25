@@ -39,6 +39,7 @@ public class ReleaseTrainService extends AbstractCRUDService<ReleaseTrain, Relea
                 .map(saved -> {
                     saved.setName(releaseTrain.getName());
                     saved.setNotes(releaseTrain.getNotes());
+                    saved.setManager(releaseTrain.getManager());
                     saved.setCommunity(communityService.findById(releaseTrain.getCommunity().getId())
                             .orElseThrow(() -> new IllegalArgumentException(CommunityMessages.COMMUNITY_NOT_FOUND)));
 

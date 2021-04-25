@@ -37,6 +37,8 @@ public class ReleaseTrain extends AbstractModel {
     @OneToMany(mappedBy = "releaseTrain")
     private List<ReleaseTrainResponsible> responsible;
 
+    private String manager;
+
     private String notes;
 
     @NotNull

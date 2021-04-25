@@ -18,6 +18,8 @@ public class UpdateReleaseTrainRequest {
     @NotEmpty(message = ReleaseTrainMessages.NAME_REQUIRED)
     private String name;
 
+    private String manager;
+
     @NotNull(message = ReleaseTrainMessages.COMMUNITY_REQUIRED)
     private Long community;
 
